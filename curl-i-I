@@ -1,0 +1,5 @@
+Requisição com cabeçario e corpo (Header and Body)
+curl -i https://jsonplaceholder.typicode.com/users/1
+
+Requisição com cabeçario somente (Header only)
+curl -I https://jsonplaceholder.typicode.com/users/1
