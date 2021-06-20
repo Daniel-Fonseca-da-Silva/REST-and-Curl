@@ -1,0 +1,2 @@
+Requisição verbosa(verbose)
+curl -i -v https://jsonplaceholder.typicode.com/users/1
