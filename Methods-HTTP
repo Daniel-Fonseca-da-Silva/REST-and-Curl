@@ -1,0 +1,36 @@
+Verbo GET(pegar, ler) recupera uma requisição
+ curl https://jsonplaceholder.typicode.com/users/1 -X GET
+
+Verbo POST(criar/gravar) um recurso
+curl https://jsonplaceholder.typicode.com/posts -X POST \
+  -H "Content-Type: application/json" \
+  -d '{"userId": 1, "title": "Meu artigo", "body": "Corpo do artigo..."}'
+
+curl https://jsonplaceholder.typicode.com/posts
+
+Verbo PUT(atualizar) um recurso
+curl https://jsonplaceholder.typicode.com/posts -X PUT \
+-H "Content-Type: application/json" \
+-d "title": "Meu novo artigo"}'
+
+Verbo DELETE(deletar) um recurso
+curl -X DELETE https://jsonplaceholder.typicode.com/users/1
+
+Verbo HEAD(Retorna o cabeçario)
+curl -I -v DELETE https://jsonplaceholder.typicode.com/users/1
+
+VERBO PATCH(Atualização parcial)
+curl https://jsonplaceholder.typicode.com/posts/3 -X PATCH \
+ -H "Content-Type: application/json" \
+ -d '{ "title": "Novo titulo"}'
+
+VERBO OPTION(Exibe verbos disponíveis)
+curl https://jsonplaceholder.typicode.com/posts/3 -X PATCH \
+ -H "Content-Type: application/json" \
+ -d '{ "title": "Novo titulo"}'
+
+Verbo TRACE(Ecoa a requisição)
+curl https://www.google.com -X TRACE
+Vulnerabilidade! a ataques!
+
+VERBO CONNECT(Converte a requisição com tunel)
