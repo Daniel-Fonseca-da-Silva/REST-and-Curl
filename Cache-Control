@@ -1,0 +1,5 @@
+curl -I https://www.uol.com.br/
+
+curl -I https://www.kabum.com.br/
+
+curl -I https://www.netshoes.com.br/
