@@ -1,0 +1,12 @@
+Retorna a requisição no formato JSON
+curl mockbin.org/request -H "Accept: application/json"
+
+Retorna a requisição no formato XML
+curl mockbin.org/request -H "Accept: application/xml"
+
+Retorna a requisição no formato YAML
+curl mockbin.org/request -H "Accept: application/yaml"
+
+Retorna a requisição no formato JSON ou XML
+O valor com maior número será trazido se tiver caso contrário o ouro de menor
+curl mockbin.org/request -H "Accept: application/json;q=0.5, application/xml;q=0.8"
