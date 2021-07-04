@@ -21,7 +21,7 @@
     "/users": {
       "get": {
         "summary": "Lista dos usuários",
-        "description": "Este endpoit irá retorna todos os usuários cadastrados do sistema.\n",
+        "description": "Este endpoit irá retorna **todo**s os usuários cadastrados no sistema.\n",
         "tags": [
           "Users"
         ],
@@ -48,6 +48,44 @@
             }
           }
         }
+      }
+    },
+    "/users{id}": {
+      "get": {
+        "tags": [
+          "user"
+        ],
+        "summary": "Exibe apenas um usuário",
+        "description": "Este endpoint retorna **apenas o usuário** que foi informado o id.\n",
+        "responses": {
+          "200": {
+            "description": "Retorna um usuário",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          "500": {
+            "description": "Erro interno do servidor",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "default": {
+            "description": "Erro inesperado",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID do usuário",
+            "type": "integer",
+            "required": true
+          }
+        ]
       }
     }
   },
