@@ -18,34 +18,16 @@
     "application/json"
   ],
   "paths": {
-    "/products": {
+    "/users": {
       "get": {
-        "summary": "Product Types",
-        "description": "The Products endpoint returns information about the *Uber* products\noffered at a given location. The response includes the display name\nand other details about each product, and lists the products in the\nproper display order.\n",
-        "parameters": [
-          {
-            "name": "latitude",
-            "in": "query",
-            "description": "Latitude component of location.",
-            "required": true,
-            "type": "number",
-            "format": "double"
-          },
-          {
-            "name": "longitude",
-            "in": "query",
-            "description": "Longitude component of location.",
-            "required": true,
-            "type": "number",
-            "format": "double"
-          }
-        ],
+        "summary": "Lista dos usuários",
+        "description": "Este endpoit irá retorna todos os usuários cadastrados do sistema.\n",
         "tags": [
-          "Products"
+          "Users"
         ],
         "responses": {
           "200": {
-            "description": "An array of products",
+            "description": "Retorna uma lista(array) de usuários",
             "schema": {
               "type": "array",
               "items": {
@@ -53,8 +35,14 @@
               }
             }
           },
+          "500": {
+            "description": "Erro interno do servidor",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
           "default": {
-            "description": "Unexpected error",
+            "description": "Erro inesperado",
             "schema": {
               "$ref": "#/definitions/Error"
             }
