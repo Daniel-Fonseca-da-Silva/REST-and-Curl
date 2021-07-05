@@ -74,6 +74,76 @@
             }
           }
         }
+      },
+      "put": {
+        "summary": "Atualiza um usuário",
+        "description": "Este endpoit atualiza um usuário no sistema. O id do usuário deve ser fornecido!\n",
+        "parameters": [
+          {
+            "name": "user",
+            "in": "body",
+            "description": "Usuário",
+            "schema": {
+              "$ref": "#/definitions/User"
+            },
+            "required": true
+          }
+        ],
+        "tags": [
+          "Users"
+        ],
+        "responses": {
+          "200": {
+            "description": "Usuário atualizado com sucesso no sistema",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          "404": {
+            "description": "Usuário não encontrado, lembre-se de fornecer o id."
+          },
+          "default": {
+            "description": "Erro inesperado",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "summary": "Atualiza um usuário",
+        "description": "Este endpoit atualiza um usuário no sistema. O id do usuário deve ser fornecido!\n",
+        "parameters": [
+          {
+            "name": "user",
+            "in": "body",
+            "description": "Usuário",
+            "schema": {
+              "$ref": "#/definitions/User"
+            },
+            "required": true
+          }
+        ],
+        "tags": [
+          "Users"
+        ],
+        "responses": {
+          "200": {
+            "description": "Usuário atualizado com sucesso no sistema",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          "404": {
+            "description": "Usuário não encontrado, lembre-se de fornecer o id."
+          },
+          "default": {
+            "description": "Erro inesperado",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
       }
     },
     "/users/{id}": {
