@@ -35,10 +35,36 @@
               }
             }
           },
-          "500": {
-            "description": "Erro interno do servidor",
+          "default": {
+            "description": "Erro inesperado",
             "schema": {
               "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Cria um usuário",
+        "description": "Este endpoit cadastra um usuário no sistema.\n",
+        "parameters": [
+          {
+            "name": "user",
+            "in": "body",
+            "description": "Usuário",
+            "schema": {
+              "$ref": "#/definitions/User"
+            },
+            "required": true
+          }
+        ],
+        "tags": [
+          "Users"
+        ],
+        "responses": {
+          "201": {
+            "description": "Usuário cadastrado com sucesso no sistema",
+            "schema": {
+              "$ref": "#/definitions/User"
             }
           },
           "default": {
@@ -50,7 +76,7 @@
         }
       }
     },
-    "/users{id}": {
+    "/users/{id}": {
       "get": {
         "tags": [
           "user"
@@ -62,12 +88,6 @@
             "description": "Retorna um usuário",
             "schema": {
               "$ref": "#/definitions/User"
-            }
-          },
-          "500": {
-            "description": "Erro interno do servidor",
-            "schema": {
-              "$ref": "#/definitions/Error"
             }
           },
           "default": {
@@ -91,6 +111,10 @@
   },
   "definitions": {
     "User": {
+      "required": [
+        "email",
+        "name"
+      ],
       "type": "object",
       "properties": {
         "id": {
