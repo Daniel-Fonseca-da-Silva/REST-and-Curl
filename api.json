@@ -155,10 +155,43 @@
         "description": "Este endpoint retorna **apenas o usuário** que foi informado o id.\n",
         "responses": {
           "200": {
-            "description": "Retorna um usuário",
+            "description": "Usuário encontrado com sucesso",
             "schema": {
               "$ref": "#/definitions/User"
             }
+          },
+          "default": {
+            "description": "Erro inesperado",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID do usuário",
+            "type": "integer",
+            "required": true
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "user"
+        ],
+        "summary": "Apagar um usuário",
+        "description": "Este endpoint **apaga** o usuário que foi informado seu id.\n",
+        "responses": {
+          "200": {
+            "description": "Usuário apagado com sucesso"
+          },
+          "404": {
+            "description": "Não foi encontrado um usuário válido"
+          },
+          "410": {
+            "description": "O usuário informado não existe mais"
           },
           "default": {
             "description": "Erro inesperado",
